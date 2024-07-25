@@ -1,0 +1,80 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.0'
+}
+
+group = 'vip.aridi.meetup'
+
+def gitCommitHash = 'git rev-parse --short HEAD'.execute().text.trim()
+
+version = gitCommitHash
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://maven.elmakers.com/repository/' }
+    maven { url 'https://maven.notfab.net/SpigotMC/' }
+    maven { url 'https://ci.athion.net/job/FastAsyncWorldEdit/ws/mvn/' }
+    maven { url 'https://raw.github.com/Lucaniuss/Edge/repository/' }
+    maven { url 'https://raw.github.com/Lucaniuss/Label/repository/' }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
+    compileOnly 'rip.katz.api:Katto:1.0-SNAPSHOT'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation 'org.mongodb:mongo-java-driver:3.12.10'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    implementation fileTree(dir: 'libs', include: '*.jar')
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+task updatePluginYml {
+    doLast {
+        def pluginYml = file('src/main/resources/plugin.yml')
+        def text = pluginYml.text
+        text = text.replaceAll(/version: .*/, "version: ${gitCommitHash}")
+        pluginYml.text = text
+    }
+}
+
+processResources.dependsOn updatePluginYml
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifactId = project.name
+            pom {
+                name = project.name
+                description = 'Aridi Meetup Project in kotlin'
+                url = 'http://www.aridi.vip'
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = 'local'
+            url = uri("${buildDir}/output")
+        }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+
+kotlin {
+    jvmToolchain(11)
+}
