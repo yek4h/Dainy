@@ -18,5 +18,4 @@ class NoScenario: Scenario(
     name = "",
     icon = ItemStack(Material.PAPER),
     description = "No modifications, just the normal game"
-){
-}
+)
