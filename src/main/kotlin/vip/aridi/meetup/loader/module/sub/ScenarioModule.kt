@@ -1,12 +1,9 @@
 package vip.aridi.meetup.loader.module.sub
 
-import org.bukkit.inventory.ItemStack
-import org.example.vip.aridi.meetup.Dainy
-import rip.katz.api.utils.ItemBuilder
-import vip.aridi.meetup.loader.Loader
 import vip.aridi.meetup.loader.module.IModule
 import vip.aridi.meetup.scenario.Scenario
-import vip.aridi.meetup.util.CC
+import vip.aridi.meetup.scenario.sub.NoFallScenario
+import vip.aridi.meetup.scenario.sub.NoScenario
 
 
 /*
@@ -28,7 +25,10 @@ class ScenarioModule(
     }
 
     override fun load() {
-        //Add scenarios
+        scenarios.addAll(listOf(
+            NoScenario(),
+            NoFallScenario()
+        ))
     }
 
     override fun unload() {
