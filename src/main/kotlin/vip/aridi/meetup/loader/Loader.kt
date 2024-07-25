@@ -4,6 +4,7 @@ import org.bukkit.command.ConsoleCommandSender
 import org.example.vip.aridi.meetup.Dainy
 import vip.aridi.meetup.loader.module.IModule
 import vip.aridi.meetup.loader.module.sub.ConfigurationModule
+import vip.aridi.meetup.loader.module.sub.ScenarioModule
 import vip.aridi.meetup.util.CC
 
 
@@ -21,9 +22,10 @@ class Loader(d: Dainy) : KLoader {
     private val modules: MutableList<IModule> = mutableListOf()
     private val console: ConsoleCommandSender = d.server.consoleSender
 
-    companion object { // We add 2 companion objects so in java code this can't be modified
+    companion object {
         @JvmStatic
         val configModule = ConfigurationModule()
+        val scenarioModule = ScenarioModule()
     }
 
     init {
@@ -48,6 +50,7 @@ class Loader(d: Dainy) : KLoader {
 
     private fun initModules() {
         addModules(configModule)
+        addModules(scenarioModule)
     }
 
     override fun enabled() {
