@@ -1,0 +1,4 @@
+name: Dainy
+main: vip.aridi.meetup.Dainy
+version: ${git.commit.id.abbrev}
+author: Yair

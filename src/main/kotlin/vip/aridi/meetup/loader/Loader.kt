@@ -67,14 +67,14 @@ class Loader(d: Dainy) : KLoader {
     override fun loadModules() {
         modules.sortedBy { it.order() }.forEach {
             it.load()
-            console.sendMessage(CC.translate("&7[&dModule System&7] &a${it.moduleName()} has been enabled successfully"))
+            console.sendMessage(CC.translate("&7[&dModule System&7] &a${it.moduleName()} module has been enabled successfully"))
         }
     }
 
     override fun unloadModules() {
         modules.sortedByDescending { it.order() }.forEach {
             it.unload()
-            console.sendMessage(CC.translate("&7[&dModule System&7] &c${it.moduleName()} has been disabled successfully"))
+            console.sendMessage(CC.translate("&7[&dModule System&7] &c${it.moduleName()} module has been disabled successfully"))
         }
     }
 
