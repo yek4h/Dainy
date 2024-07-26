@@ -21,6 +21,12 @@ class VoteManager {
     private val votes: MutableMap<Scenario, Int> = Loader.scenarioModule.scenarios.associateWith { 0 }.toMutableMap()
     private val lastVotedMap: MutableMap<Player, String?> = mutableMapOf()
 
+    init {
+        Loader.scenarioModule.scenarios.forEach { scenario ->
+            votes[scenario] = 0
+        }
+    }
+
     fun getHighestVote(): Scenario {
         return votes.maxByOrNull { it.value }?.key
             ?: Loader.scenarioModule.getByName("Default")
