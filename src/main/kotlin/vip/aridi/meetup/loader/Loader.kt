@@ -4,6 +4,7 @@ import org.bukkit.command.ConsoleCommandSender
 import org.example.vip.aridi.meetup.Dainy
 import vip.aridi.meetup.loader.module.IModule
 import vip.aridi.meetup.loader.module.sub.ConfigurationModule
+import vip.aridi.meetup.loader.module.sub.ManagerModule
 import vip.aridi.meetup.loader.module.sub.ProfileModule
 import vip.aridi.meetup.loader.module.sub.ScenarioModule
 import vip.aridi.meetup.util.CC
@@ -27,6 +28,7 @@ class Loader(d: Dainy) : KLoader {
         @JvmStatic
         val configModule = ConfigurationModule()
         val profileModule = ProfileModule()
+        val managersModule = ManagerModule()
         val scenarioModule = ScenarioModule()
     }
 
@@ -53,6 +55,7 @@ class Loader(d: Dainy) : KLoader {
     private fun initModules() {
         addModules(configModule)
         addModules(profileModule)
+        addModules(managersModule)
         addModules(scenarioModule)
     }
 
