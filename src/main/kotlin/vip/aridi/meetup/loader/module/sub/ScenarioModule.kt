@@ -21,7 +21,7 @@ class ScenarioModule(
     val scenarios: MutableList<Scenario> = mutableListOf()
 
     override fun order(): Int {
-        return 3
+        return 16
     }
 
     override fun load() {

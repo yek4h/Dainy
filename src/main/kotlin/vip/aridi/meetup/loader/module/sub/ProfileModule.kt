@@ -16,7 +16,7 @@ import vip.aridi.meetup.profile.ProfileManager
 class ProfileModule(
 ): IModule {
     override fun order(): Int {
-        return 2
+        return 8
     }
 
     override fun load() {

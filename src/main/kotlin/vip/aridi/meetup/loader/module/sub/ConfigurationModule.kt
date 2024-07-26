@@ -20,7 +20,7 @@ class ConfigurationModule(
     lateinit var mainConfig: Configuration
     lateinit var scenarioConfig: Configuration
     override fun order(): Int {
-        return 1
+        return 4
     }
 
     override fun load() {
