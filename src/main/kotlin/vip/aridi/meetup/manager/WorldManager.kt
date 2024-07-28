@@ -55,8 +55,8 @@ class WorldManager(
         //Put the logic for adjust the world biome
     }
 
-    private fun setBiome(from: Biome, to: Biome, plus: Int) {
-        // From biome, to the new biome, and the ID logic or something
+    private fun applyBiomeMapping(from: Biome, to: Biome, offset: Int) {
+        // From biome, to the new biome, and the offset
     }
 
 
