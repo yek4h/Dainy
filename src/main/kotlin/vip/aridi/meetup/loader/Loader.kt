@@ -1,7 +1,7 @@
 package vip.aridi.meetup.loader
 
 import org.bukkit.command.ConsoleCommandSender
-import org.example.vip.aridi.meetup.Dainy
+import vip.aridi.meetup.Dainy
 import vip.aridi.meetup.loader.module.IModule
 import vip.aridi.meetup.loader.module.sub.ConfigurationModule
 import vip.aridi.meetup.loader.module.sub.ManagerModule

@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler
 import org.bukkit.event.HandlerList
 import org.bukkit.event.Listener
 import org.bukkit.inventory.ItemStack
-import org.example.vip.aridi.meetup.Dainy
+import vip.aridi.meetup.Dainy
 import kotlin.reflect.KClass
 
 /*

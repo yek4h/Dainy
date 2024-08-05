@@ -1,4 +1,4 @@
-package org.example.vip.aridi.meetup
+package vip.aridi.meetup
 
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin

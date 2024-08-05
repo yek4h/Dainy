@@ -2,7 +2,6 @@ package vip.aridi.meetup.manager
 
 import org.bukkit.Sound
 import org.bukkit.entity.Player
-import org.example.vip.aridi.meetup.Dainy
 import vip.aridi.meetup.loader.Loader
 import vip.aridi.meetup.scenario.Scenario
 import vip.aridi.meetup.util.CC

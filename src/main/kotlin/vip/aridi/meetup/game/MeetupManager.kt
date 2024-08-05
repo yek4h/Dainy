@@ -4,6 +4,7 @@ import org.bukkit.Material
 import org.bukkit.World
 import org.bukkit.entity.Player
 import org.example.vip.aridi.meetup.Dainy
+import vip.aridi.meetup.Dainy
 import vip.aridi.meetup.loader.Loader
 import vip.aridi.meetup.profile.Profile
 import java.util.Random

@@ -1,6 +1,6 @@
 package vip.aridi.meetup.loader.module.sub
 
-import org.example.vip.aridi.meetup.Dainy
+import vip.aridi.meetup.Dainy
 import vip.aridi.meetup.loader.module.IModule
 import vip.aridi.meetup.util.Configuration
 
