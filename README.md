@@ -29,3 +29,5 @@ To make a direct contribution make sure you're allowed, ask in [Aridi Developmen
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+
+This proyect is currently abandoned, you can fork and continue it, is a good base to start working on it
